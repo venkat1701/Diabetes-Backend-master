@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Raleway:ital,wght@1,100&family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction System-Model</title>
+    <link rel="stylesheet" type=    "text/css" th:href="@{styles/style.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{styles/model.css}"/>
+</head>
+<body>
+    <script th:src="@{js/script.js}"></script>
+    <main>
+        <section class="vert1">
+            <div class="features">
+                <h3>Features</h3>
+                <div class="sliders">
+                    <!-- First Slider for Pregnancy -->
+                    <div class="slider">
+                        <div class="text">
+                            <h6 class="tpc0">Pregnancies</h6>
+                        </div>
+                        <div class="slide">
+                            <input type="range" min="0" max="100" value="50" oninput="rangeValue1.innerText=this.value"/>
+                            <p id="rangeValue1">50</p>
+                        </div>
+                    </div>
+
+                    <!-- Second Slider for Glucose -->
+                    <div class="slider">
+                        <div class="text">
+                            <h6 class="tpc1">Glucose</h6>
+                        </div>
+                        <div class="slide">
+                            <input type="range" min="0" max="100" value="50" oninput="rangeValue2.innerText=this.value"/>
+                            <p id="rangeValue2">50</p>
+                        </div>
+                    </div>
+
+                     <!-- Third Slider for BP -->
+                     <div class="slider">
+                        <div class="text">
+                            <h6 class="tpc2">Blood_Pressure</h6>
+                        </div>
+                        <div class="slide">
+                            <input type="range" min="0" max="100" value="50" oninput="rangeValue3.innerText=this.value"/>
+                            <p id="rangeValue3">50</p>
+                        </div>
+                    </div>
+
+                     <!-- Fourth Slider for Skin Thickness -->
+                     <div class="slider">
+                        <div class="text">
+                            <h6 class="tpc3">Skin_Thickness</h6>
+                        </div>
+                        <div class="slide">
+                            <input type="range" min="0" max="100" value="50" oninput="rangeValue4.innerText=this.value"/>
+                            <p id="rangeValue4">50</p>
+                        </div>
+                    </div>
+
+                     <!-- Fifth Slider for Insulin -->
+                     <div class="slider">
+                        <div class="text">
+                            <h6 class="tpc4">Insulin</h6>
+                        </div>
+                        <div class="slide">
+                            <input type="range" min="0" max="100" value="50" oninput="rangeValue5.innerText=this.value"/>
+                            <p id="rangeValue5">50</p>
+                        </div>
+                    </div>
+
+                     <!-- Sixth Slider for BMI -->
+                     <div class="slider">
+                        <div class="text">
+                            <h6 class="tpc5">BMI</h6>
+                        </div>
+                        <div class="slide">
+                            <input type="range" min="0" max="100" value="50" oninput="rangeValue6.innerText=this.value"/>
+                            <p id="rangeValue6">50</p>
+                        </div>
+                    </div>
+
+                     <!-- Seventh Slider for Pedigree -->
+                     <div class="slider">
+                        <div class="text">
+                            <h6 class="tpc6">Pedigree</h6>
+                        </div>
+                        <div class="slide">
+                            <input type="range" min="0.100" max="1.000" value=".1" oninput="rangeValue7.innerText=this.value"/>
+                            <p id="rangeValue7">.10</p>
+                        </div>
+                    </div>
+
+
+                     <!-- Eighth Slider for Age -->
+                     <div class="slider">
+                        <div class="text">
+                            <h6 class="tpc7">Age</h6>
+                        </div>
+                        <div class="slide">
+                            <input type="range" min="0" max="100" value="50" oninput="rangeValue8.innerText=this.value"/>
+                            <p id="rangeValue8">50</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="note">
+                    <h3>Note</h3>
+                    <p>Playing with the sliders, you will find biases that exist in this model.</p>
+                    <p>For example, moving the Smiling slider can turn a face from masculine to feminine or from lighter skin to darker.</p>
+                    <p> Apps like these that allow you to visually inspect model inputs help you find these biases so you can address them in your model before it's put into production.</p>
+                </div>
+            </div>
+        </section>
+        <section class="vert2">
+            <section class="elements">
+                <h1>Medik - Diabetes Prediction System</h1>
+                <p>This demo demonstrates using Nvidia's Progressive Growing of GANs and Shaobo Guan's Transparent Latent-space GAN method for tuning the output face's characteristics. For more information, check out the tutorial on Towards Data Science.</p>
+                <br>
+                <h1 onclick="sliderChange()">More Upcoming...</h1>
+            </section>
+        </section>
+    </main>
+
+    
+</body>
+</html>

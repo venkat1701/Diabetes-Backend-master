@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Raleway:ital,wght@1,100&family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction System</title>
+    <link rel="stylesheet" type="text/css" th:href="@{styles/style.css}"/>
+</head>
+<body>
+    <main>
+        <section class="scr1">
+            <div class="headercontainer">
+                <div class="site">
+                    <div class="elements">
+                        <b>📞 +91 22222 33333</b>
+                        <b>📧 info@mediocare.com</b>
+                    </div>
+                    <div class="headdiv">
+                        <h3>Mediocare</h3>
+                        <div class="hammenu">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <ul class="">
+                            <li>About</li>
+                            <li>Products</li>
+                            <li>Services</li>
+                            <li>Doctors</li>
+                            <li>Queries</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>  
+
+
+            <div class="page1tpc">
+                <div class="title" data-aos="fade-up" data-aos-duration="2000">
+                    <h1>YOUR HEALTH</h1>
+                    <h1>OUR</h1>
+                    <h1>RESPONSIBILITY</h1>
+                </div>
+                <div class="subtitle" data-aos="fade-up" data-aos-duration="2000">
+                    <div></div> Just Do Medicare.
+                </div>
+                <div class="buttonsdiv" data-aos="fade-up" data-aos-duration="2000">                
+                    <a href="/model"><div class="button" id="selec" >
+                            <h4>Let's Predict</h4>
+                        </div>
+                    </a>
+                    <div class="button">
+                        <h4>LEARN MORE</h4>
+                    </div>
+                </div>
+            </div>
+
+            
+        </section>
+        <section class="scr2">
+            <div class="maindiv">
+                
+                <div class="aboutusdiv">
+                    <div class="smalltopic">
+                        <div class="dash"></div>
+                        <h6>ABOUT US</h6>
+                        <div class="dash"></div>
+                    </div>
+                    <span class="topic">
+                        HOW MEDICARE WORKS
+                    </span>
+                    <div class="para">
+                        Medicare  allows its clients to check against several  chronic and widespread diseases
+by predicting their medical status based on input parameters for diseases such as 
+diabetes and heart disorders.
+                    </div>
+
+
+                    <div class="detailbox">
+                        <div class="icon">🎖</div>
+                        <h2>80+</h2>
+                        <div class="container">
+                            <h3>Accuracy</h3>
+                            <p>Our machine learning models for predicting diseases and illnesses are more than 80% accurate and precise.</p>
+                        </div>
+                        
+                    </div>
+
+                    <div class="detailbox">
+                        <div class="icon">🕸</div>
+                        <h2>100+</h2>
+                        <div class="container">
+                            <h3>HEALTHY ADVICES</h3>
+                            <p>Medicare provides you health related tips and tricks to be used in daily life.</p>
+                        </div>
+                        
+                    </div>
+
+                </div>
+                <div class="imagediv">
+                    <img src="images/total.svg"/>
+                </div>
+            </div>
+        </section>
+
+        <section class="scr3">
+            <div>
+                <div class="sectiondiv">
+                    <div class="headers">
+                        <div class="aboutusdiv">
+                            <div class="smalltopic">
+                                <div class="dash"></div>
+                                <h6>SERVICES</h6>
+                                <div class="dash"></div>
+                            </div>
+                            <div class="topic">
+                                WHAT WE PROVIDE
+                            </div>
+                         </div>
+                    
+        
+                    <div class="containers">
+                        <div class="box" th:each="service : ${services}">
+                            <img th:src="@{${service.imageName}}"/>
+                            <h3 th:text="${service.title}"></h3>
+                            <p th:text="${service.data}"></p>
+                            <h5>Read More</h5>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="quotefig">
+                <img src="@{images/doctor.png}"/>
+                <div class="quotetext">
+                    <div class="aboutusdiv">
+                        <div class="smalltopic">
+                            <div class="dash"></div>
+                            <h6>MEDICARE'S DEDICATION</h6>
+                            <div class="dash"></div>
+                        </div>
+                        <div class="topic">
+                            NEVER GO TO A DOCTOR WHOSE OFFICE PLANTS HAVE DIED.
+                        </div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="scr4">
+            <div>
+                <div>
+                    <div class="aboutusdiv">
+                        <div class="smalltopic">
+                            <div class="dash">
+                        </div>
+                        <h6>WHY US</h6>
+                    </div>
+                    <div class="topic">
+                                WHY CHOOSE US
+                    </div>
+                </div>
+                <div class="chooseuscontainer">
+                    <div class="choosebox" data-aos="fade-down" data-aos-duration="1000" th:each="box: ${boxes}">
+                        <div>
+                            <img th:src="@{${box.iconName}}"/>
+                            <h5 th:text="${box.title}"></h5>
+                        </div>
+                        <p th:text="${box.data}"></p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="scr5">
+            <div class="abouthire">
+                <div class="card">
+                    <h3>Dhruv Kalbalia</h3>
+                    <h6>AI ML</h6>
+                </div>
+                <div class="card">
+                    <h3>Krish Jaiswal</h3>
+                    <h6>Full Stack</h6>
+                </div>
+            </div>
+            <div class="aboutusdiv">
+                <div class="smalltopic">
+                    <div class="dash">
+                </div>
+            </div>
+        </section>
+
+        <section class="scr6">
+
+            <div class="scr6main">
+                <div class="aboutusdiv">
+                        <div class="smalltopic">
+                            <div class="dash">
+                        </div>
+                        <h6>SKILLSET</h6>
+                    </div>
+                    <div class="topic">
+                        CHECK SKILLSET & MANUPULATION
+                    </div>
+                    <div class="bars">
+                        <div class="progressbox">
+                            <div class="texts">
+                                <h4>TRAINED DATA ACCURACY</h4>
+                                <h6>85%</h6>
+                            </div>
+                            <div class="progress">
+                                <div class="progressbar"></div>
+                            </div>
+                        </div>
+
+
+                        <div class="progressbox">
+                            <div class="texts">
+                                <h4>TEST DATA ACCURACY</h4>
+                                <h6>80%</h6>
+                            </div>
+                            <div class="progress">
+                                <div class="progressbar"></div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="progressbox">
+                            <div class="texts">
+                                <h4>5-STAR RATING</h4>
+                                <h6>98%</h6>
+                            </div>
+                            <div class="progress">
+                                <div class="progressbar"></div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="imgg">
+                <img src="images/skill-img.jpg"/>
+            </div>
+        </section>
+
+        <section class="scr7">
+            <div class="aboutusdiv">
+                <div class="smalltopic">
+                    <div class="dash"></div>
+                    <h6>PORTFOLIO</h6>
+                    <div class="dash"></div>
+                </div>
+                <div class="topic">
+                    CASE STUDY
+                </div>
+             </div>
+
+             <div class="images">
+                 <div th:each="image : ${portfolioimages}">
+                     <img th:src="@{${image.imageName}}"/>
+                 </div>
+             </div>
+        </section>
+
+        <footer>
+            <h3>Made with ❤️ by Krish Jaiswal</h3>
+            <div class="copyrights">
+                <h5>&copy; Copyrights Reserved 2022</h5>
+            </div>
+        </footer>
+
+
+    </main>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script> 
+</body>
+</html>
