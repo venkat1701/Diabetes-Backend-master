@@ -21,7 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
     path("predict/", views.predict),
-    path("predict/result", views.result)
-
+    path("predict/result", views.result),
+    path("predict/heart", views.heart)
 
 ]

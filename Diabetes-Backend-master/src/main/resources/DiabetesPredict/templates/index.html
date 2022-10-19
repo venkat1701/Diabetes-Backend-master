@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+>
 <head>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +24,7 @@
                         <b>📧 info@mediocare.com</b>
                     </div>
                     <div class="headdiv">
-                        <h3>Mediocare</h3>
+                        <h3>Medicare</h3>
                         <div class="hammenu">
                             <div></div>
                             <div></div>
@@ -131,7 +131,7 @@ diabetes and heart disorders.
                             <img th:src="@{${service.imageName}}"/>
                             <h3 th:text="${service.title}"></h3>
                             <p th:text="${service.data}"></p>
-                            <h5>Read More</h5>
+                            <a th:href="${service.link}"><h5>Predict</h5></a>
                         </div>
                     </div>
 
@@ -151,6 +151,7 @@ diabetes and heart disorders.
                         </div>
                 </div>
                 </div>
+            </div>
             </div>
         </section>
 
@@ -179,6 +180,7 @@ diabetes and heart disorders.
 
                 </div>
             </div>
+            </div>
         </section>
 
         <section class="scr5">
@@ -196,6 +198,7 @@ diabetes and heart disorders.
                 <div class="smalltopic">
                     <div class="dash">
                 </div>
+            </div>
             </div>
         </section>
 

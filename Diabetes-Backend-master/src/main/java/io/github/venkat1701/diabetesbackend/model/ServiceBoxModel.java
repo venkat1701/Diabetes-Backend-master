@@ -13,6 +13,6 @@ public class ServiceBoxModel {
     private String imageName;
     private String title;
     private String data;
-
+    private String link;
 
 }

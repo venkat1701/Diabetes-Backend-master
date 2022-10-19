@@ -141,27 +141,27 @@ main{
     justify-content: space-between;
     align-items: left;
     gap: 30px;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .dataparam .parameter:nth-child(1){
-    font-weight: 700;
+    font-weight: 1000;
     font-size: 35px;
 }
 
 
 
 .dataval .value:nth-child(1){
-    font-weight: 700;
+    font-weight: 1000;
     font-size: 35px;
 }
 
 .dataval{
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
     gap: 30px;
-    flex-direction: row;
+    align-items: left;
+    flex-direction: column;
 }
 
 h3{
@@ -178,4 +178,12 @@ p{
     align-items: flex-start;
     gap: 25px;
     flex-direction: column;
+}
+
+.results{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 40px;
+    align-items: flex-start;
 }

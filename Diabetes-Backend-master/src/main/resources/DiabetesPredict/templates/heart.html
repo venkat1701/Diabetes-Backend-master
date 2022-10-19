@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Raleway:ital,wght@1,100&family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Heart Prediction System</title>
+    <link rel="stylesheet" type="text/css" th:href="@{styles/style.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{styles/model.css}"/>
+</head>
+<body>
+    <script th:src="@{js/heart.js}"></script>
+    <main>
+        <section class="vert1">
+            <div class="features">
+                <h3>Features</h3>
+                <form action="result">
+                    <div class="sliders">
+                        <!-- First Slider for Pregnancy -->
+                        <div class="slider">
+                            <div class="text">
+                                <h6 class="tpc0">Age</h6>
+                            </div>
+                            <div class="slide">
+                                <input type="range" min="0" max="100" value="50" oninput="rangeValue1.innerText=this.value"/>
+                                <p id="rangeValue1">50</p>
+                            </div>
+                        </div>
+
+                        <!-- Second Slider for Glucose -->
+                        <div class="slider">
+                            <div class="text">
+                                <h6 class="tpc1">Sex</h6>
+                            </div>
+                            <div class="slide">
+                                <input type="range" min="0" max="1" value="0" oninput="rangeValue2.innerText=this.value"/>
+                                <p id="rangeValue2">0</p>
+                            </div>
+                        </div>
+
+
+                        <div class="slider">
+                            <div class="text">
+                                <h6 class="tpc2">CP</h6>
+                            </div>
+                            <div class="slide">
+                                <input type="range" min="0" max="5" value="3" oninput="rangeValue3.innerText=this.value"/>
+                                <p id="rangeValue3">3</p>
+                            </div>
+                        </div>
+
+                         <!-- Third Slider for BP -->
+                         <div class="slider">
+                            <div class="text">
+                                <h6 class="tpc3">Rest_Blood_Pressure</h6>
+                            </div>
+                            <div class="slide">
+                                <input type="range" min="0" max="200" value="100" oninput="rangeValue4.innerText=this.value"/>
+                                <p id="rangeValue4">100</p>
+                            </div>
+                        </div>
+
+                         <!-- Fourth Slider for Skin Thickness -->
+                         <div class="slider">
+                            <div class="text">
+                                <h6 class="tpc4">Cholestrol</h6>
+                            </div>
+                            <div class="slide">
+                                <input type="range" min="0" max="300" value="150" oninput="rangeValue5.innerText=this.value"/>
+                                <p id="rangeValue5">150</p>
+                            </div>
+                        </div>
+
+                         <!-- Fifth Slider for Insulin -->
+                         <div class="slider">
+                            <div class="text">
+                                <h6 class="tpc5">Fasting_Blood_Sugar</h6>
+                            </div>
+                            <div class="slide">
+                                <input type="range" min="0" max="1" value="0" oninput="rangeValue6.innerText=this.value"/>
+                                <p id="rangeValue6">0</p>
+                            </div>
+                        </div>
+
+                         <!-- Sixth Slider for BMI -->
+                         <div class="slider">
+                            <div class="text">
+                                <h6 class="tpc6">Rest_ECG</h6>
+                            </div>
+                            <div class="slide">
+                                <input type="range" min="0" max="2" value="1" oninput="rangeValue7.innerText=this.value"/>
+                                <p id="rangeValue7">1</p>
+                            </div>
+                        </div>
+
+                         <!-- Seventh Slider for Pedigree -->
+                         <div class="slider">
+                            <div class="text">
+                                <h6 class="tpc7">Thalach</h6>
+                            </div>
+                            <div class="slide">
+                                <input type="range" min="0" max="200" value="100" oninput="rangeValue8.innerText=this.value"/>
+                                <p id="rangeValue8">100</p>
+                            </div>
+                        </div>
+
+
+                         <!-- Eighth Slider for Age -->
+                         <div class="slider">
+                            <div class="text">
+                                <h6 class="tpc8">Exang</h6>
+                            </div>
+                            <div class="slide">
+                                <input type="range" min="0" max="1" value="0" oninput="rangeValue9.innerText=this.value"/>
+                                <p id="rangeValue9">1</p>
+                            </div>
+                        </div>
+
+
+                        <div class="slider">
+                            <div class="text">
+                                <h6 class="tpc9">OldPeak</h6>
+                            </div>
+                            <div class="slide">
+                                <input type="range" min="0.0" max="4.0" value="2.0" oninput="rangeValue10.innerText=this.value"/>
+                                <p id="rangeValue10">2.0</p>
+                            </div>
+                        </div>
+
+
+                        <div class="slider">
+                            <div class="text">
+                                <h6 class="tpc10">Slope</h6>
+                            </div>
+                            <div class="slide">
+                                <input type="range" min="0" max="2" value="1" oninput="rangeValue11.innerText=this.value"/>
+                                <p id="rangeValue11">2</p>
+                            </div>
+                        </div>
+
+                        <div class="slider">
+                            <div class="text">
+                                <h6 class="tpc11">CA</h6>
+                            </div>
+                            <div class="slide">
+                                <input type="range" min="0" max="3" value="1" oninput="rangeValue12.innerText=this.value"/>
+                                <p id="rangeValue12">1</p>
+                            </div>
+                        </div>
+
+                        <div class="slider">
+                            <div class="text">
+                                <h6 class="tpc12">Thal</h6>
+                            </div>
+                            <div class="slide">
+                                <input type="range" min="3" max="7" value="5" oninput="rangeValue13.innerText=this.value"/>
+                                <p id="rangeValue13">5</p>
+                            </div>
+                        </div>
+
+                                 
+                    </div>
+                </form>
+
+
+
+                <div class="note">
+                    <h3>Note</h3>
+                    <p>Type 2 diabetes is the most common form of diabetes. You're more likely to get type 2 diabetes if you're overweight and inactive – or if you have prediabetes.</p>
+                    <p>Having prediabetes means your blood glucose levels are higher than normal, but not high enough for you to be diagnosed with type 2 diabetes.</p>
+                </div>
+            </div>
+        </section>
+        <section class="vert2">
+            <section class="elements">
+                <h1>Medicare - Healthy Heart Prediction System</h1>
+                <p>The term “heart disease” refers to several types of heart conditions. The most common type of heart disease in the United States is coronary artery disease (CAD), which affects the blood flow to the heart. Decreased blood flow can cause a heart attack.
+                    <br><br>
+                    Cardiac rehabilitation (rehab) is an important program for anyone recovering from a heart attack, heart failure, or some types of heart surgery. Cardiac rehab is a supervised program that includes
+                    <ul>
+                        <li>Physical activity</li>
+                        <li>Education about healthy living, including healthy eating, taking medicine as prescribed, and ways to help you quit smoking</li>
+                        <li>Counseling to find ways to relieve stress and improve mental health</li>
+                    </ul>
+                
+                    <div class="info">
+                        <h3>Symptoms</h3>
+                        <h4>What are the symptoms of heart disease?</h4>
+                        <p>Sometimes heart disease may be “silent” and not diagnosed until a person experiences signs or symptoms of a heart attack, heart failure, or an arrhythmia. When these events happen, symptoms may include:
+                            <br><br>
+                        <ul>
+                            <li>Heart attack: Chest pain or discomfort, upper back or neck pain, indigestion, heartburn, nausea or vomiting, extreme fatigue, upper body discomfort, dizziness, and shortness of breath.</li>
+                            <li>Arrhythmia: Fluttering feelings in the chest (palpitations).</li>
+                            <li>Heart failure: Shortness of breath, fatigue, or swelling of the feet, ankles, legs, abdomen, or neck veins.</li>
+                        </ul>
+                    </div>
+
+
+                <div class="buttonsdiv" data-aos="fade-up" data-aos-duration="2000">                
+                    <div class="button" id="selec" onclick="sliderChange()" type="submit">
+                            <h4>Let's Predict</h4>
+                    </div>
+                    <div class="button">
+                        <h4>LEARN MORE</h4>
+                    </div>
+                </div>
+
+
+
+            <div class="results">
+                <div class="dataparam">
+                    <div class="parameter" th:each="par : ${parameters}">
+                        <div>
+                            <p th:text="${par}"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="dataval">
+                    <div class="value" th:each="val : ${values}">
+                        <div>
+                            <p th:text="${val}"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="legend">
+                    <h4>Legend</h4>
+                    <ul>
+                        <li>age: The person's age in years</li>
+                        <li>sex: The person's sex (1 = male, 0 = female)</li>
+                        <li>cp: The chest pain experienced (Value 1: typical angina, Value 2: atypical angina, Value 3: non-anginal pain, Value 4: asymptomatic)</li>
+                        <li>trestbps: The person's resting blood pressure (mm Hg on admission to the hospital)</li>
+                        <li> chol: The person's cholesterol measurement in mg/dl</li>
+                        <li>fbs: The person's fasting blood sugar (> 120 mg/dl, 1 = true; 0 = false)</li>
+                        <li>restecg: Resting electrocardiographic measurement (0 = normal, 1 = having ST-T wave abnormality, 2 = showing probable or definite left ventricular hypertrophy by Estes' criteria)</li>
+                        <li>thalach: The person's maximum heart rate achieved</li>
+                        <li>exang: Exercise induced angina (1 = yes; 0 = no)</li>
+                        <li>oldpeak: ST depression induced by exercise relative to rest ('ST' relates to positions on the ECG plot. See more here)</li>
+                        <li>slope: the slope of the peak exercise ST segment (Value 1: upsloping, Value 2: flat, Value 3: downsloping)</li>
+                        <li>ca: The number of major vessels (0-3)</li>
+                        <li>thal: A blood disorder called thalassemia (3 = normal; 6 = fixed defect; 7 = reversable defect)</li>
+                    </ul>
+                </div>
+            </section>
+            
+        </section>
+    </main>
+
+
+</body>
+</html>

@@ -124,7 +124,7 @@
         </section>
         <section class="vert2">
             <section class="elements">
-                <h1>Medik - Diabetes Prediction System</h1>
+                <h1>Medicare - Diabetes Prediction System</h1>
                 <p>Having diabetes means glucose (sugar) levels in your blood are too high. Your body depends on glucose for energy. When you eat, most of the food turns into glucose. Your blood carries the glucose to other parts of your body.
                     <br><br>
                     When you have diabetes, your body has trouble turning glucose into energy. Instead of being used by your body, glucose builds up in your blood and your body is starved of energy. Over time, high blood glucose can damage almost every part of your body.
@@ -162,7 +162,7 @@
 
 
 
-
+            <div class="results">
                 <div class="dataparam">
                     <div class="parameter" th:each="par : ${parameters}">
                         <div>
@@ -177,9 +177,22 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
+            <div class="legend">
+                <h4>Legend</h4>
+                <ul>
+                    <li>Pregnancies :- Number of times a woman has been pregnant</li>
+                    <li>Glucose :- Plasma Glucose concentration of 2 hours in an oral glucose tolerance test</li>
+                    <li>BloodPressure :- Diastollic Blood Pressure (mm hg)</li>
+                    <li>SkinThickness :- Triceps skin fold thickness(mm)</li>
+                    <li>Insulin :- 2 hour serum insulin(mu U/ml)</li>
+                    <li>BMI :- Body Mass Index ((weight in kg/height in m)^2)</li>
+                    <li>Age :- Age(years)</li>
+                    <li>DiabetesPedigreeFunction :-scores likelihood of diabetes based on family history)</li>
+                </ul>
+            </div>
 
-                
             </section>
             
         </section>
@@ -188,122 +201,3 @@
 
 </body>
 </html>
-
-<!--<html>-->
-<!--<Title>Predict page</Title>-->
-<!--<body>-->
-<!--<h1>Diabetes Prediction System</h1>-->
-<!--<form action="result">-->
-<!--    <h2>Please enter the following parameters</h2>-->
-
-
-
-<!--    <table>-->
-<!--        <tr><td>Pregnancies: <input type="text" name = "n1"></td></tr>-->
-<!--        <tr><td>Glucose: <input type="text" name = "n2"></td></tr>-->
-<!--        <tr><td>Blood Pressure: <input type="text" name = "n3"></td></tr>-->
-<!--        <tr><td>Skin Thickness: <input type="text" name = "n4"></td></tr>-->
-<!--        <tr><td>Insulin: <input type="text" name = "n5"></td></tr>-->
-<!--        <tr><td>BMI: <input type="text" name = "n6"></td></tr>-->
-<!--        <tr><td>Diabetes Pedigree Function: <input type="text" name = "n7"></td></tr>-->
-<!--        <tr><td>Age: <input type="text" name = "n8"></td></tr>-->
-
-<!--    </table>-->
-<!--    <input type="submit">-->
-<!--</form>-->
-<!--<h2>Result: {{result2}}</h2>-->
-
-<!--<h3>User Input</h3>-->
-<!--<p>Pregnancies: {{no1}}</p>-->
-<!--<p>Glucose: {{no2}}</p>-->
-<!--<p>Blood Pressure: {{no3}}</p>-->
-<!--<p>Skin Thickness: {{no4}}</p>-->
-<!--<p>Insulin: {{no5}}</p>-->
-<!--<p>BMI: {{no6}}</p>-->
-<!--<p>Diabetes Pedigree Function: {{no7}}</p>-->
-<!--<p>Age: {{no8}}</p>-->
-<!--</body>-->
-<!--</html>-->
-
-<!--<style>-->
-<!--    *, *:before, *:after {-->
-<!--        -moz-box-sizing: border-box;-->
-<!--        -webkit-box-sizing: border-box;-->
-<!--        box-sizing: border-box;-->
-<!--    }-->
-
-<!--    body {-->
-<!--        font-family: 'Nunito', sans-serif;-->
-<!--        color: #384047;-->
-<!--    }-->
-
-<!--    form {-->
-<!--        max-width: 300px;-->
-<!--        margin: 10px auto;-->
-<!--        padding: 10px 20px;-->
-<!--        background: #f4f7f8;-->
-<!--        border-radius: 8px;-->
-<!--    }-->
-<!--    p{-->
-<!--        margin: 0 0 8px 0;-->
-<!--        text-align: center;-->
-<!--    }-->
-<!--    h3{margin: 0 0 12px 0;-->
-<!--        text-align: center;}-->
-
-<!--    h2,h4,-->
-<!--    h1{-->
-<!--        margin: 0 0 30px 0;-->
-<!--        text-align: center;-->
-<!--    }-->
-
-<!--    input[type="text"],-->
-<!--    textarea,-->
-<!--    select {-->
-<!--        background: rgba(255,255,255,0.1);-->
-<!--        border: none;-->
-<!--        font-size: 16px;-->
-<!--        height: auto;-->
-<!--        margin: 0;-->
-<!--        outline: 0;-->
-<!--        padding: 15px;-->
-<!--        width: 100%;-->
-<!--        background-color: #e8eeef;-->
-<!--        color: #8a97a0;-->
-<!--        box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;-->
-<!--        margin-bottom: 30px;-->
-<!--    }-->
-
-
-<!--    input[type="submit"] {-->
-<!--        padding: 19px 39px 18px 39px;-->
-<!--        color: #FFF;-->
-<!--        background-color: #4bc970;-->
-<!--        font-size: 18px;-->
-<!--        text-align: center;-->
-<!--        font-style: normal;-->
-<!--        border-radius: 5px;-->
-<!--        width: 100%;-->
-<!--        border: 1px solid #3ac162;-->
-<!--        border-width: 1px 1px 3px;-->
-<!--        box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;-->
-<!--        margin-bottom: 10px;-->
-<!--    }-->
-
-<!--    fieldset {-->
-<!--        margin-bottom: 30px;-->
-<!--        border: none;-->
-<!--    }-->
-
-
-
-
-<!--    @media screen and (min-width: 480px) {-->
-
-<!--        form {-->
-<!--            max-width: 480px;-->
-<!--        }-->
-
-<!--    }-->
-
-<!--</style>-->

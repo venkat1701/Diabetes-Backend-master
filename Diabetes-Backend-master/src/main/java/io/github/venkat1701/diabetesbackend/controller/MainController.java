@@ -53,9 +53,9 @@ public class MainController {
 
     public List<ServiceBoxModel> getServiceBoxModel() {
         List<ServiceBoxModel> serviceBoxes = new ArrayList<>();
-        serviceBoxes.add(new ServiceBoxModel("/images/diabetes.png", "DIABETES PREDICTION", "Medicare's finest models, based on input parameters of client, predicts if a person is Diabetic or not."));
-        serviceBoxes.add(new ServiceBoxModel("/images/corona.png", "HEART DISEASE PREDICTION", "Medicare, on the basis of some parameters, predicts whether the client has a healthy heart or not."));
-        serviceBoxes.add(new ServiceBoxModel("/images/corona.png", "MORE UPCOMING..", "Developers and Doctors in Medicare are working on more prediction models currently..."));
+        serviceBoxes.add(new ServiceBoxModel("/images/diabetes.png", "DIABETES PREDICTION", "Medicare's finest models, based on input parameters of client, predicts if a person is Diabetic or not.", "/model"));
+        serviceBoxes.add(new ServiceBoxModel("/images/corona.png", "HEART DISEASE PREDICTION", "Medicare, on the basis of some parameters, predicts whether the client has a healthy heart or not.", "/heart"));
+        serviceBoxes.add(new ServiceBoxModel("/images/corona.png", "MORE UPCOMING..", "Developers and Doctors in Medicare are working on more prediction models currently...","/"));
 
         return serviceBoxes;
     }

@@ -38,6 +38,9 @@ public class ResultEntity {
     @SerializedName("Result")
     private String result;
 
+    @SerializedName("AccuracyScore")
+    private double accuracyScore;
+
 
     private Map<String, String> resultsMap;
 
@@ -51,7 +54,8 @@ public class ResultEntity {
                 this.getInsulin()+"",
                 this.getBMI()+"",
                 this.getDiabetesPedigree()+"",
-                this.getAge()+"");
+                this.getAge()+"",
+                this.getAccuracyScore()+"%");
 
     }
 
@@ -64,6 +68,7 @@ public class ResultEntity {
                 "Insulin",
                 "BMI",
                 "Diabetes Pedigree",
-                "Age");
+                "Age",
+                "Accuracy Score");
     }
 }
