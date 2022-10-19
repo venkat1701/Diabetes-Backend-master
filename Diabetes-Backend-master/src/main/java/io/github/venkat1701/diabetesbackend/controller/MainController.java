@@ -3,10 +3,13 @@ package io.github.venkat1701.diabetesbackend.controller;
 import io.github.venkat1701.diabetesbackend.model.ChooseBoxModel;
 import io.github.venkat1701.diabetesbackend.model.PortfolioImageModel;
 import io.github.venkat1701.diabetesbackend.model.ServiceBoxModel;
+import org.python.icu.text.Normalizer;
+import org.python.modules._systemrestart;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
@@ -33,6 +36,8 @@ public class MainController {
         model.addAllAttributes(map);
         return mv;
     }
+
+
 
     public List<ChooseBoxModel> getChooseBoxModel() {
         List<ChooseBoxModel> chooseBoxModels = new ArrayList<>();

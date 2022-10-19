@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Raleway:ital,wght@1,100&family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction System-Model</title>
+    <link rel="stylesheet" type=    "text/css" th:href="@{styles/style.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{styles/model.css}"/>
+</head>
+<body>
+    <script th:src="@{js/script.js}"></script>
+    <main>
+        <section class="vert1">
+            <div class="features">
+                <h3>Features</h3>
+                <form action="result">
+                    <div class="sliders">
+                        <!-- First Slider for Pregnancy -->
+                        <div class="slider">
+                            <div class="text">
+                                <h6 class="tpc0">Pregnancies</h6>
+                            </div>
+                            <div class="slide">
+                                <input type="range" min="0" max="100" value="50" oninput="rangeValue1.innerText=this.value"/>
+                                <p id="rangeValue1">50</p>
+                            </div>
+                        </div>
+
+                        <!-- Second Slider for Glucose -->
+                        <div class="slider">
+                            <div class="text">
+                                <h6 class="tpc1">Glucose</h6>
+                            </div>
+                            <div class="slide">
+                                <input type="range" min="0" max="100" value="50" oninput="rangeValue2.innerText=this.value"/>
+                                <p id="rangeValue2">50</p>
+                            </div>
+                        </div>
+
+                         <!-- Third Slider for BP -->
+                         <div class="slider">
+                            <div class="text">
+                                <h6 class="tpc2">Blood_Pressure</h6>
+                            </div>
+                            <div class="slide">
+                                <input type="range" min="0" max="100" value="50" oninput="rangeValue3.innerText=this.value"/>
+                                <p id="rangeValue3">50</p>
+                            </div>
+                        </div>
+
+                         <!-- Fourth Slider for Skin Thickness -->
+                         <div class="slider">
+                            <div class="text">
+                                <h6 class="tpc3">Skin_Thickness</h6>
+                            </div>
+                            <div class="slide">
+                                <input type="range" min="0" max="100" value="50" oninput="rangeValue4.innerText=this.value"/>
+                                <p id="rangeValue4">50</p>
+                            </div>
+                        </div>
+
+                         <!-- Fifth Slider for Insulin -->
+                         <div class="slider">
+                            <div class="text">
+                                <h6 class="tpc4">Insulin</h6>
+                            </div>
+                            <div class="slide">
+                                <input type="range" min="0" max="100" value="50" oninput="rangeValue5.innerText=this.value"/>
+                                <p id="rangeValue5">50</p>
+                            </div>
+                        </div>
+
+                         <!-- Sixth Slider for BMI -->
+                         <div class="slider">
+                            <div class="text">
+                                <h6 class="tpc5">BMI</h6>
+                            </div>
+                            <div class="slide">
+                                <input type="range" min="0" max="100" value="50" oninput="rangeValue6.innerText=this.value"/>
+                                <p id="rangeValue6">50</p>
+                            </div>
+                        </div>
+
+                         <!-- Seventh Slider for Pedigree -->
+                         <div class="slider">
+                            <div class="text">
+                                <h6 class="tpc6">Pedigree</h6>
+                            </div>
+                            <div class="slide">
+                                <input type="range" min="100" max="999" value="490" oninput="rangeValue7.innerText=this.value"/>
+                                <p id="rangeValue7">490</p>
+                            </div>
+                        </div>
+
+
+                         <!-- Eighth Slider for Age -->
+                         <div class="slider">
+                            <div class="text">
+                                <h6 class="tpc7">Age</h6>
+                            </div>
+                            <div class="slide">
+                                <input type="range" min="0" max="100" value="50" oninput="rangeValue8.innerText=this.value"/>
+                                <p id="rangeValue8">50</p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+
+
+                <div class="note">
+                    <h3>Note</h3>
+                    <p>Type 2 diabetes is the most common form of diabetes. You're more likely to get type 2 diabetes if you're overweight and inactive – or if you have prediabetes.</p>
+                    <p>Having prediabetes means your blood glucose levels are higher than normal, but not high enough for you to be diagnosed with type 2 diabetes.</p>
+                </div>
+            </div>
+        </section>
+        <section class="vert2">
+            <section class="elements">
+                <h1>Medik - Diabetes Prediction System</h1>
+                <p>Having diabetes means glucose (sugar) levels in your blood are too high. Your body depends on glucose for energy. When you eat, most of the food turns into glucose. Your blood carries the glucose to other parts of your body.
+                    <br><br>
+                    When you have diabetes, your body has trouble turning glucose into energy. Instead of being used by your body, glucose builds up in your blood and your body is starved of energy. Over time, high blood glucose can damage almost every part of your body.
+                    <br><br>
+                    Diabetes is a chronic (long-term) condition.</p>
+                
+                    <div class="info">
+                        <h3>Symptoms</h3>
+                        <h4>What are the symptoms of Type 2 Diabetes</h4>
+                        <p>Symptoms of type 2 diabetes often develop over several years. Many people with type 2 diabetes have symptoms for a long time without noticing them. Some people may never notice any symptoms.
+                            <br><br>
+                            Symptoms of diabetes include:</p>
+                        <ul>
+                            <li>Being very thirsty or hungry</li>
+                            <li>Feeling more tired than usual</li>
+                            <li>Urinating (peeing) more than usual</li>
+                            <li>Losing weight for no reason</li>
+                            <li>Having cuts or bruises that are slow to heal</li>
+                            <li>Having blurry vision</li>
+                            <li>Feeling numb or tingly in your hands or feet</li>
+                        </ul>
+    
+                        <p>Because symptoms of type 2 diabetes can be hard to spot, it’s important to talk with your doctor about your risk for type 2 diabetes. If you have risk factors or notice any symptoms, ask your doctor about getting tested.</p>
+                    </div>
+
+
+                <div class="buttonsdiv" data-aos="fade-up" data-aos-duration="2000">                
+                    <div class="button" id="selec" onclick="sliderChange()" type="submit">
+                            <h4>Let's Predict</h4>
+                    </div>
+                    <div class="button">
+                        <h4>LEARN MORE</h4>
+                    </div>
+                </div>
+
+
+
+
+                <div class="dataparam">
+                    <div class="parameter" th:each="par : ${parameters}">
+                        <div>
+                            <p th:text="${par}"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="dataval">
+                    <div class="value" th:each="val : ${values}">
+                        <div>
+                            <p th:text="${val}"></p>
+                        </div>
+                    </div>
+                </div>
+
+
+                
+            </section>
+            
+        </section>
+    </main>
+
+
+</body>
+</html>
+
+<!--<html>-->
+<!--<Title>Predict page</Title>-->
+<!--<body>-->
+<!--<h1>Diabetes Prediction System</h1>-->
+<!--<form action="result">-->
+<!--    <h2>Please enter the following parameters</h2>-->
+
+
+
+<!--    <table>-->
+<!--        <tr><td>Pregnancies: <input type="text" name = "n1"></td></tr>-->
+<!--        <tr><td>Glucose: <input type="text" name = "n2"></td></tr>-->
+<!--        <tr><td>Blood Pressure: <input type="text" name = "n3"></td></tr>-->
+<!--        <tr><td>Skin Thickness: <input type="text" name = "n4"></td></tr>-->
+<!--        <tr><td>Insulin: <input type="text" name = "n5"></td></tr>-->
+<!--        <tr><td>BMI: <input type="text" name = "n6"></td></tr>-->
+<!--        <tr><td>Diabetes Pedigree Function: <input type="text" name = "n7"></td></tr>-->
+<!--        <tr><td>Age: <input type="text" name = "n8"></td></tr>-->
+
+<!--    </table>-->
+<!--    <input type="submit">-->
+<!--</form>-->
+<!--<h2>Result: {{result2}}</h2>-->
+
+<!--<h3>User Input</h3>-->
+<!--<p>Pregnancies: {{no1}}</p>-->
+<!--<p>Glucose: {{no2}}</p>-->
+<!--<p>Blood Pressure: {{no3}}</p>-->
+<!--<p>Skin Thickness: {{no4}}</p>-->
+<!--<p>Insulin: {{no5}}</p>-->
+<!--<p>BMI: {{no6}}</p>-->
+<!--<p>Diabetes Pedigree Function: {{no7}}</p>-->
+<!--<p>Age: {{no8}}</p>-->
+<!--</body>-->
+<!--</html>-->
+
+<!--<style>-->
+<!--    *, *:before, *:after {-->
+<!--        -moz-box-sizing: border-box;-->
+<!--        -webkit-box-sizing: border-box;-->
+<!--        box-sizing: border-box;-->
+<!--    }-->
+
+<!--    body {-->
+<!--        font-family: 'Nunito', sans-serif;-->
+<!--        color: #384047;-->
+<!--    }-->
+
+<!--    form {-->
+<!--        max-width: 300px;-->
+<!--        margin: 10px auto;-->
+<!--        padding: 10px 20px;-->
+<!--        background: #f4f7f8;-->
+<!--        border-radius: 8px;-->
+<!--    }-->
+<!--    p{-->
+<!--        margin: 0 0 8px 0;-->
+<!--        text-align: center;-->
+<!--    }-->
+<!--    h3{margin: 0 0 12px 0;-->
+<!--        text-align: center;}-->
+
+<!--    h2,h4,-->
+<!--    h1{-->
+<!--        margin: 0 0 30px 0;-->
+<!--        text-align: center;-->
+<!--    }-->
+
+<!--    input[type="text"],-->
+<!--    textarea,-->
+<!--    select {-->
+<!--        background: rgba(255,255,255,0.1);-->
+<!--        border: none;-->
+<!--        font-size: 16px;-->
+<!--        height: auto;-->
+<!--        margin: 0;-->
+<!--        outline: 0;-->
+<!--        padding: 15px;-->
+<!--        width: 100%;-->
+<!--        background-color: #e8eeef;-->
+<!--        color: #8a97a0;-->
+<!--        box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;-->
+<!--        margin-bottom: 30px;-->
+<!--    }-->
+
+
+<!--    input[type="submit"] {-->
+<!--        padding: 19px 39px 18px 39px;-->
+<!--        color: #FFF;-->
+<!--        background-color: #4bc970;-->
+<!--        font-size: 18px;-->
+<!--        text-align: center;-->
+<!--        font-style: normal;-->
+<!--        border-radius: 5px;-->
+<!--        width: 100%;-->
+<!--        border: 1px solid #3ac162;-->
+<!--        border-width: 1px 1px 3px;-->
+<!--        box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;-->
+<!--        margin-bottom: 10px;-->
+<!--    }-->
+
+<!--    fieldset {-->
+<!--        margin-bottom: 30px;-->
+<!--        border: none;-->
+<!--    }-->
+
+
+
+
+<!--    @media screen and (min-width: 480px) {-->
+
+<!--        form {-->
+<!--            max-width: 480px;-->
+<!--        }-->
+
+<!--    }-->
+
+<!--</style>-->

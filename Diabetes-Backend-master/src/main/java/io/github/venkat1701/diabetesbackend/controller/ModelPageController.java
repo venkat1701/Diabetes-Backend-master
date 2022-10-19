@@ -1,25 +1,20 @@
 package io.github.venkat1701.diabetesbackend.controller;
 
 
+import com.google.gson.Gson;
+import io.github.venkat1701.diabetesbackend.entity.ResultEntity;
 import lombok.SneakyThrows;
-import org.graalvm.polyglot.Context;
-import org.python.core.Py;
-import org.python.core.PyFunction;
-import org.python.core.PyString;
-import org.python.util.PythonInterpreter;
+import org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.io.FileInputStream;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.StringWriter;
-import java.nio.file.Paths;
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 
 @Controller
 public class ModelPageController {
@@ -44,22 +39,23 @@ public class ModelPageController {
                             @RequestParam("Age")int age){
 
         System.out.println(pregnancies+", "+glucose+", "+bp+", "+thickness+", "+insulin+", "+bmi+", "+pedigree+", "+age);
-        this.executePythonFile();
+
+
+        String URI = String.format("http://127.0.0.1:8585/predict/result?Pregnancies=%d&Glucose=%d&Blood_Pressure=%d&Skin_Thickness=%d&Insulin=%d&BMI=%d&Pedigree=%f&Age=%d",
+                    pregnancies, glucose, bp, thickness, insulin, bmi, pedigree/1000, age);
+        RestTemplate template = new RestTemplate();
+        String result = template.getForObject(URI, String.class);
+        var gson = new Gson();
+        var entity = gson.fromJson(result, ResultEntity.class);
+        System.out.println(result);
+
+
 
         var mv = new ModelAndView();
         mv.setViewName("model.html");
+        mv.addObject("parameters", entity.getResultParametersList());
+        mv.addObject("values", entity.getResultValuesList());
         return mv;
     }
-
-    @SneakyThrows
-    public void executePythonFile() {
-        PythonInterpreter pythonInterpreter = new PythonInterpreter();
-        FileInputStream fis = new FileInputStream("C:\\Users\\krish\\OneDrive\\Desktop\\Diabetes-Backend-master\\Diabetes-Backend-master\\src\\main\\python\\diabetes_prediction.py");
-        pythonInterpreter.execfile(fi);
-        PyFunction pyFunction = (PyFunction) pythonInterpreter.get("get_pred", PyFunction.class);
-        pyFunction.__call__();
-    }
-
-
 
 }

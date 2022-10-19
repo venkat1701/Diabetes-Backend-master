@@ -16,7 +16,7 @@ from sklearn.model_selection import train_test_split
 from sklearn import svm  # uses support vector machine classifier to evaluate the model
 from sklearn.metrics import accuracy_score
 
-data = pd.read_csv("C:\\Users\\krish\\OneDrive\\Desktop\\Diabetes-Backend-master\\Diabetes-Backend-master\\src\\main\\resources\\static\\csv\\diabetes.csv")  # importing data
+data = pd.read_csv("/DiabetesPredict/static\\csv\\diabetes.csv")  # importing data
 
 data.shape  # reads the number of rows and columns
 
